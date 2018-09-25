@@ -1,4 +1,4 @@
-from dna import DNA
+from genomics_demo.dna import DNA
 import pytest
 
 def test_bad_sequence_raises_error():

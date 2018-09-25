@@ -1,4 +1,4 @@
-from rna import RNA
+from genomics_demo.rna import RNA
 import pytest
 
 def test_bad_sequence_raises_error():
