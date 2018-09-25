@@ -1,6 +1,6 @@
 build
 dist
 .pytest_cache
-genomics_demo.egg_info
+genomics_demo.egg-info
 .idea
 __pycache__
