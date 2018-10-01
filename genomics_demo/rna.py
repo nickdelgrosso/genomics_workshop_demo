@@ -17,10 +17,22 @@ class RNA:
         return "RNA(sequence='{}')".format(self.sequence)
 
     def _check_validity(self):
-        are_good = (nucleotide.upper() in 'GCAU' for nucleotide in self.sequence)
-        return True if all(are_good) else False
+        return all(nucleotide.upper() in 'GCAU' for nucleotide in self.sequence)
 
     @property
     def complimentary_sequence(self):
         return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
+
+    @property
+    def rna_start_codon(self):
+        if 'AUG' in self.sequence:
+            return('coding RNA')
+        else:
+            return('non coding RNA')
+
+
+
+
+
+
 
