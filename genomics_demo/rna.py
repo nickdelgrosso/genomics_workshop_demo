@@ -114,3 +114,9 @@ class RNA:
 
         return '-'.join(aa_sequence)
 
+    @property
+    def reverse_sequence(self):
+        return RNA(''.join(reversed(self.sequence)))
+
+
+

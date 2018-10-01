@@ -9,7 +9,6 @@ def test_complimentary_sequence_works():
     assert RNA('GUC').complimentary_sequence == RNA('CAG')
     assert RNA('AUC').complimentary_sequence == RNA('UAG')
 
-
 def test_mutated_sequence_works():
     #assert RNA('GGGGGGGGGGUGGGGGGGGG')._check_if_mutated == True
     assert RNA('GGGGGGGGGGUGGGGGGGGG')._check_if_mutated == print('The fish is mutated')
@@ -32,3 +31,8 @@ def test_get_aa_sequence():
 def test_check_polyA():
     assert RNA('A' * 50).check_polyA()
     assert RNA('A' * 49).check_polyA() is False
+
+
+def test_reverse_sequence_works():
+    assert RNA('GUCA').reverse_sequence == RNA('ACUG')
+    assert RNA('ACUG').reverse_sequence == RNA('GUCA')
