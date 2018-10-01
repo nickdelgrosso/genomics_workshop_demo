@@ -38,3 +38,12 @@ class DNA:
         reverse_compliment = (''.join(compliment[i] for i in range(len(compliment)-1, -1, -1)))
         reverse_compliment_rna = reverse_compliment.replace('T', 'U')
         return reverse_compliment_rna
+
+    @property
+    def gc_content(self):
+        return (sum(nucleotide in 'GC' for nucleotide in self.sequence.upper()))/len(self.sequence)
+
+    @property
+    def complimentary_sequence(self):
+        return DNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
+
