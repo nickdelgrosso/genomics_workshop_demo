@@ -43,3 +43,28 @@ class DNA:
             if self.sequence[i:i + 3] == 'ATG':
                 return i
         raise TypeError("No start codon found")
+
+    def compliment(self):
+        return DNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
+
+    def find_start_codons(self):
+        indices = []
+        index = -1
+
+        while True:
+            index = self.sequence.find('ATG', index + 1)
+            if index == -1:
+                return indices
+            indices.append(index)
+
+    def transcribe(self):
+        compliment = self.compliment.sequence
+        reverse_compliment = (''.join(compliment[i] for i in range(len(compliment)-1, -1, -1)))
+        reverse_compliment_rna = reverse_compliment.replace('T', 'U')
+        return reverse_compliment_rna
+
+    def gc_content(self):
+        return 0.5
+        #gc_count = self.count("G") + self.count("C")
+        #gc_fraction = float(gc_count) / len(self)
+        #return 100 * gc_fraction
