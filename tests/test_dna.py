@@ -10,6 +10,8 @@ def test_bad_sequence_raises_error():
 def test_complimentary_sequence_works():
     assert DNA('GTC').complimentary_sequence == DNA('CAG')
     assert DNA('ATC').complimentary_sequence == DNA('TAG')
+    assert DNA('GTC').complimentary_sequence == DNA('CAG')
+    assert DNA('ATC').complimentary_sequence == DNA('TAG')
 
 def test_gc_content():
     assert DNA('ATTTATGGCC').gc_content == 0.4
@@ -41,6 +43,7 @@ def test_transcribe():
     assert DNA('ATC').transcribe() == 'GAU'
 
 
+
 #def test_gc_content_sequence_works():
  #   assert DNA('GC').gc_content > 0.5
 def test_is_gc_rich():
@@ -55,3 +58,5 @@ def test_gc_content():
     assert DNA('ATAT').gc_content == 0
 
 
+=======
+>>>>>>> 7b8692d3820f86892851b95de64d14dc1ac74878

@@ -1,7 +1,7 @@
 complimentary_nucleotides = {'A': 'U', 'U': 'A', 'C': 'G', 'G': 'C'}
+
 type_motifs = {'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA': 'polyA tail mRNA',
               'GAGAGUA': 'clover leaf loop tRNA', 'AAGUGC':'microRNA'}
-import numpy as np
 
 class RNA:
     def __init__(self, sequence: str):
@@ -46,7 +46,8 @@ class RNA:
 
     @property
     def complimentary_sequence(self):
-        return RNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
+        return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
+
 
 
     @property
@@ -126,10 +127,4 @@ class RNA:
             return('coding RNA')
         else:
             return('non coding RNA')
-
-
-
-
-
-
 
