@@ -27,3 +27,16 @@ class DNA:
     def complimentary_sequence(self):
         return DNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 
+    @property
+    def split_DNA_triplets(self):
+        return [self.sequence[i:i + 3] for i in range(0, len(self.sequence), 3)]
+
+    @property
+    def find_first_start_site(self):
+        '''
+        Seeks position of the first start codon, if present.
+        '''
+        for i in range(0,len(self.sequence)):
+            if self.sequence[i:i + 3] == 'ATG':
+                return i
+        raise TypeError("No start codon found")
