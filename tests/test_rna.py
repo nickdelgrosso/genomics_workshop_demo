@@ -10,4 +10,4 @@ def test_complimentary_sequence_works():
     assert RNA('AUC').complimentary_sequence == RNA('UAG')
 
 def test_get_aa_sequence():
-    assert RNA('UUUUUCUUA').get_aa_sequence() == 'Phe-Phe-Leu'
+    assert RNA('UUUUUCUUAU').get_aa_sequence() == 'Phe-Phe-Leu'

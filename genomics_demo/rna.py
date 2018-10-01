@@ -42,7 +42,9 @@ class RNA:
 
         }
 
-        aa_sequence = [aa[self.sequence[i:i+3:1]] for i in range(0, len(self.sequence), 3)]
+        trunc_sequence = self.sequence[:(len(self.sequence)//3)*3]
+
+        aa_sequence = [aa[trunc_sequence[i:i+3:1]] for i in range(0, len(trunc_sequence), 3)]
 
         return '-'.join(aa_sequence)
 
