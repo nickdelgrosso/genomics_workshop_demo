@@ -17,8 +17,7 @@ class DNA:
         return "DNA(sequence='{}')".format(self.sequence)
 
     def _check_validity(self):
-        are_good = (nucleotide.upper() in 'GCAT' for nucleotide in self.sequence)
-        return True if all(are_good) else False
+        return all(nucleotide in 'GCAT' for nucleotide in self.sequence.upper())
 
     @property
     def complimentary_sequence(self):
