@@ -52,3 +52,8 @@ def test_mutated_sequence_works():
     assert RNA('GGGGGGGGGGUGGGGGGGGG')._check_if_mutated == print('The fish is mutated')
     assert RNA('GGGGGGGGGGUGGGGUUGGG')._check_if_mutated == print('The fish is not mutated')
 
+
+
+def test_check_polyA():
+    assert RNA('A'*50)._check_polyA() == 'Sequence contains a poly A tail of 50 adenines'
+
