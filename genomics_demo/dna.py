@@ -48,6 +48,7 @@ class DNA:
         return DNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
 
     def find_start_codons(self):
+        """ Finds the start codon of a coding DNA sequence"""
         indices = []
         index = -1
 
@@ -58,6 +59,7 @@ class DNA:
             indices.append(index)
 
     def transcribe(self):
+        """Transcribes a DNA sequence into a RNA sequence"""
         compliment = self.compliment.sequence
         reverse_compliment = (''.join(compliment[i] for i in range(len(compliment)-1, -1, -1)))
         reverse_compliment_rna = reverse_compliment.replace('T', 'U')
