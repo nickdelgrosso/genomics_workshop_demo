@@ -17,8 +17,11 @@ class RNA:
         return "RNA(sequence='{}')".format(self.sequence)
 
     def _check_validity(self):
-        are_good = (nucleotide.upper() in 'GCAU' for nucleotide in self.sequence)
-        return True if all(are_good) else False
+        return all(nucleotide in 'GCAU' for nucleotide in self.sequence.upper())
+
+    def _check_polyA(self):
+        #return True if self.sequence.endswith('A'*50)
+        return 'Sequence contains a poly A tail of 50 adenines' #if self.sequence.endswith() == RNA('A'*50)
 
 
 
