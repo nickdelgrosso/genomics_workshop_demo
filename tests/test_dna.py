@@ -32,6 +32,7 @@ def test_find_start():
 
 
 def test_find_start_codons():
+    """New test to test the function to find start codons"""
     assert DNA('ATGGTACATGCGA').find_start_codons() == [0, 7]
 
 
