@@ -1,9 +1,12 @@
 complimentary_nucleotides = {'A': 'U', 'U': 'A', 'C': 'G', 'G': 'C'}
 
+type_motifs = {'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA': 'polyA tail mRNA',
+              'GAGAGUA': 'clover leaf loop tRNA', 'AAGUGC':'microRNA'}
 
 class RNA:
     def __init__(self, sequence: str):
         self.sequence = sequence
+        # self.motif = motif
         if not self._check_validity():
             raise ValueError("Bad sequence. Sequences must only contain G, C, A, and U")
 
@@ -17,10 +20,17 @@ class RNA:
         return "RNA(sequence='{}')".format(self.sequence)
 
     def _check_validity(self):
-        are_good = (nucleotide.upper() in 'GCAU' for nucleotide in self.sequence)
-        return True if all(are_good) else False
+        return all(nucleotide in 'GCAU' for nucleotide in self.sequence.upper())
+
+    def type_rna(self):
+        for index, mo in enumerate(type_motifs):
+            if mo in self.sequence.upper():
+                return type_motifs[mo]
+            else:
+                pass
+                # return print('not this type')
 
     @property
     def complimentary_sequence(self):
-        return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
+        return RNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
 
