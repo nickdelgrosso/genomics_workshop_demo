@@ -8,8 +8,8 @@ def test_bad_sequence_raises_error():
 
 
 def test_complimentary_sequence_works():
-    assert DNA('GTC').compliment == DNA('CAG')
-    assert DNA('ATC').compliment == DNA('TAG')
+    assert DNA('GTC').complimentary_sequence == DNA('CAG')
+    assert DNA('ATC').complimentary_sequence == DNA('TAG')
 
 
 def test_find_start_codons():
