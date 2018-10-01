@@ -32,6 +32,9 @@ class DNA:
 
     @property
     def find_first_start_site(self):
+        '''
+        Seeks position of the first start codon, if present.
+        '''
         for i in range(0,len(self.sequence)):
             if self.sequence[i:i + 3] == 'ATG':
                 return i
