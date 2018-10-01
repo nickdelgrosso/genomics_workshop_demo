@@ -1,5 +1,5 @@
 complimentary_nucleotides = {'A': 'U', 'U': 'A', 'C': 'G', 'G': 'C'}
-
+import numpy as np
 
 class RNA:
     def __init__(self, sequence: str):
@@ -23,4 +23,26 @@ class RNA:
     @property
     def complimentary_sequence(self):
         return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
+
+    def get_aa_sequence(self):
+
+        aa = {
+            'UUU' : 'Phe',
+            'UUC' : 'Phe',
+            'UUA' : 'Leu',
+            'UUG' : 'Leu',
+            'CUU' : 'Leu',
+            'CUC' : 'Leu',
+            'CUA' : 'Leu',
+            'CUG' : 'Leu',
+            'AUU' : 'Ile',
+            'AUC' : 'Ile',
+            'AUA' : 'Ile',
+            'AUG' : 'Met',
+
+        }
+
+        aa_sequence = [aa[self.sequence[i:i+3:1]] for i in range(0, len(self.sequence), 3)]
+
+        return '-'.join(aa_sequence)
 
