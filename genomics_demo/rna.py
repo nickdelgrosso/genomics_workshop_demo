@@ -46,7 +46,7 @@ class RNA:
 
     @property
     def complimentary_sequence(self):
-        return RNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
+        return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 
 
     @property
@@ -126,10 +126,4 @@ class RNA:
             return('coding RNA')
         else:
             return('non coding RNA')
-
-
-
-
-
-
 
