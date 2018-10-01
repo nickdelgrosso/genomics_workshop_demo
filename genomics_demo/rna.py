@@ -26,6 +26,7 @@ class RNA:
     @property
     def rna_start_codon(self):
         "Just a help text"
+        "or not"
         if 'AUG' in self.sequence:
             return('coding RNA')
         else:
