@@ -17,8 +17,7 @@ class RNA:
         return "RNA(sequence='{}')".format(self.sequence)
 
     def _check_validity(self):
-        are_good = (nucleotide.upper() in 'GCAU' for nucleotide in self.sequence)
-        return True if all(are_good) else False
+        return all(nucleotide.upper() in 'GCAU' for nucleotide in self.sequence)
 
     @property
     def complimentary_sequence(self):
