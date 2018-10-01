@@ -51,5 +51,6 @@ def test_mutated_sequence_works():
 
 
 def test_check_polyA():
+    "Checking if the polyA tail is at least 50 'A's long"
     assert RNA('A'*50).check_polyA() == True
 
