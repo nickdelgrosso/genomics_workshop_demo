@@ -23,3 +23,10 @@ class DNA:
     def complimentary_sequence(self):
         return DNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 
+    def gc_content(self):
+        return 0.5
+        #gc_count = self.count("G") + self.count("C")
+        #gc_fraction = float(gc_count) / len(self)
+        #return 100 * gc_fraction
+
+
