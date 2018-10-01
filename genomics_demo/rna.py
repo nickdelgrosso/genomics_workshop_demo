@@ -29,6 +29,11 @@ class RNA:
 
     @property
     def _check_if_mutated(self):
+        """
+        This function checks whether the particular sequence inserted corresponds to GGGGGGGGGGUGGGGGGGGG,
+        otherwise it means the sequence is mutated and the function reports this.
+        :return:
+        """
         is_mutated = 'GGGGGGGGGGUGGGGGGGGG' in self.sequence
         #return True if is_mutated else False
         print('The fish is mutated') if is_mutated else print('The fish is not mutated')
