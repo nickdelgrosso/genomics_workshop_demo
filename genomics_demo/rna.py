@@ -24,3 +24,11 @@ class RNA:
     def complimentary_sequence(self):
         return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 
+    @property
+    def reverse_sequence(self):
+        return RNA(''.join(reversed(self.sequence)))
+
+        #seq = self.sequence
+        #return seq[::-1]
+
+
