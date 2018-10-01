@@ -15,14 +15,11 @@ def test_mutated_sequence_works():
     assert RNA('GGGGGGGGGGUGGGGUUGGG')._check_if_mutated == print('The fish is not mutated')
 
 
-
 def test_get_aa_sequence():
     assert RNA('UUUUUCUUAU').get_aa_sequence() == 'Phe-Phe-Leu'
 
-
 def test_get_aa_sequence():
     assert RNA('UUUUUCUUAU').get_aa_sequence() == 'Phe-Phe-Leu'
-
 
 def test_motifs_works():
     assert RNA('GAUGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA').type_rna() == 'polyA tail mRNA'
@@ -30,6 +27,7 @@ def test_motifs_works():
     assert RNA('UCAUCAAGUGC').type_rna() == 'microRNA'
     assert RNA('AUCAUCAUCAUCGAGAGUAUCAUCAAGUGC').type_rna() == 'clover leaf loop tRNA'
 
+<<<<<<< HEAD
 def test_get_aa_sequence():
     assert RNA('UUUUUCUUAU').get_aa_sequence() == 'Phe-Phe-Leu'
     assert RNA('GCCACCUAG').get_aa_sequence() == 'Ala-Thr-Stop'
@@ -51,7 +49,6 @@ def test_mutated_sequence_works():
     #assert RNA('GGGGGGGGGGUGGGGGGGGG')._check_if_mutated == True
     assert RNA('GGGGGGGGGGUGGGGGGGGG')._check_if_mutated == print('The fish is mutated')
     assert RNA('GGGGGGGGGGUGGGGUUGGG')._check_if_mutated == print('The fish is not mutated')
-
 
 
 def test_check_polyA():

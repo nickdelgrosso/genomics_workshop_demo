@@ -1,7 +1,7 @@
 complimentary_nucleotides = {'A': 'U', 'U': 'A', 'C': 'G', 'G': 'C'}
+
 type_motifs = {'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA': 'polyA tail mRNA',
               'GAGAGUA': 'clover leaf loop tRNA', 'AAGUGC':'microRNA'}
-import numpy as np
 
 class RNA:
     def __init__(self, sequence: str):
