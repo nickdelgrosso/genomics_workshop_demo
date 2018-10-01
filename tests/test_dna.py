@@ -57,6 +57,3 @@ def test_gc_content():
     assert DNA('AGGTATGGCC').gc_content == 0.6
     assert DNA('ATAT').gc_content == 0
 
-
-=======
->>>>>>> 7b8692d3820f86892851b95de64d14dc1ac74878

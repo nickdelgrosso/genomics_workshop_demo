@@ -24,6 +24,7 @@ class DNA:
         return sum(nucleotide in 'GC' for nucleotide in self.sequence.upper())/len(self.sequence)
 
 
+
     def gc_content(self):
         return sum(nucleotide in 'GC' for nucleotide in self.sequence.upper())/len(self.sequence)
 
