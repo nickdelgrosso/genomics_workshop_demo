@@ -40,3 +40,12 @@ def test_transcribe():
     assert DNA('GTC').transcribe() == 'GAC'
     assert DNA('ATC').transcribe() == 'GAU'
 
+
+#def test_gc_content_sequence_works():
+ #   assert DNA('GC').gc_content > 0.5
+def test_is_gc_rich():
+    assert DNA('GTGT').gc_content() == 0.5
+ #   length = len(sequence)
+  #  c_count = sequence.upper().count('C')
+   # g_count = sequence.upp
+

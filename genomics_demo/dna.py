@@ -20,7 +20,6 @@ class DNA:
         return all(nucleotide in 'GCAT' for nucleotide in self.sequence.upper())
 
     @property
-<<<<<<< HEAD
     def gc_content(self):
         return sum(nucleotide in 'GC' for nucleotide in self.sequence.upper())/len(self.sequence)
 
@@ -44,7 +43,7 @@ class DNA:
             if self.sequence[i:i + 3] == 'ATG':
                 return i
         raise TypeError("No start codon found")
-=======
+
     def compliment(self):
         return DNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
 
@@ -63,4 +62,9 @@ class DNA:
         reverse_compliment = (''.join(compliment[i] for i in range(len(compliment)-1, -1, -1)))
         reverse_compliment_rna = reverse_compliment.replace('T', 'U')
         return reverse_compliment_rna
->>>>>>> c3aeef33517bfba91cc0e309c4a70883f0d5b98b
+
+    def gc_content(self):
+        return 0.5
+        #gc_count = self.count("G") + self.count("C")
+        #gc_fraction = float(gc_count) / len(self)
+        #return 100 * gc_fraction

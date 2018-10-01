@@ -22,7 +22,6 @@ class RNA:
     def _check_validity(self):
         return all(nucleotide in 'GCAU' for nucleotide in self.sequence.upper())
 
-<<<<<<< HEAD
     def type_rna(self):
         """
         Scans the entire RNA sequence and returns the first motif type
@@ -37,14 +36,13 @@ class RNA:
                 # return print('not this type')
 
 
-=======
     def check_polyA(self):
         """
         Checks whether the RNA sequence contains a poly A tail of 50 adenines.
         :return: True if yes, False otherwise
         """
         return True if self.sequence.endswith('A'*50) else False
->>>>>>> c3aeef33517bfba91cc0e309c4a70883f0d5b98b
+        return all(nucleotide.upper() in 'GCAU' for nucleotide in self.sequence)
 
     @property
     def complimentary_sequence(self):
@@ -117,6 +115,21 @@ class RNA:
     @property
     def reverse_sequence(self):
         return RNA(''.join(reversed(self.sequence)))
+
+
+
+    @property
+    def rna_start_codon(self):
+        "Just a help text"
+        "or not"
+        if 'AUG' in self.sequence:
+            return('coding RNA')
+        else:
+            return('non coding RNA')
+
+
+
+
 
 
 

@@ -36,3 +36,7 @@ def test_check_polyA():
 def test_reverse_sequence_works():
     assert RNA('GUCA').reverse_sequence == RNA('ACUG')
     assert RNA('ACUG').reverse_sequence == RNA('GUCA')
+
+def test_rna_start_codon():
+    assert RNA('AUG').rna_start_codon
+
