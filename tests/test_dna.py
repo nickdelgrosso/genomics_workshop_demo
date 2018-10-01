@@ -1,9 +1,11 @@
 from genomics_demo.dna import DNA
 import pytest
 
+
 def test_bad_sequence_raises_error():
     with pytest.raises(ValueError):
         DNA('ATB')
+
 
 def test_complimentary_sequence_works():
     assert DNA('GTC').complimentary_sequence == DNA('CAG')
@@ -25,4 +27,16 @@ def test_find_start():
     assert DNA('CCCCATG').find_first_start_site == 4
     with pytest.raises(TypeError):
         DNA('GGG').find_first_start_site
+
+    assert DNA('GTC').compliment == DNA('CAG')
+    assert DNA('ATC').compliment == DNA('TAG')
+
+
+def test_find_start_codons():
+    assert DNA('ATGGTACATGCGA').find_start_codons() == [0, 7]
+
+
+def test_transcribe():
+    assert DNA('GTC').transcribe() == 'GAC'
+    assert DNA('ATC').transcribe() == 'GAU'
 

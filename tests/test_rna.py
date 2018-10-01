@@ -29,3 +29,6 @@ def test_get_aa_sequence():
     assert RNA('UUUUUCUUAU').get_aa_sequence() == 'Phe-Phe-Leu'
     assert RNA('GCCACCUAG').get_aa_sequence() == 'Ala-Thr-Stop'
 
+def test_check_polyA():
+    assert RNA('A' * 50).check_polyA()
+    assert RNA('A' * 49).check_polyA() is False
