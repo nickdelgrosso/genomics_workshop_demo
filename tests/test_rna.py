@@ -14,3 +14,6 @@ def test_motifs_works():
     assert RNA('AUCAUCAUCAUCGAGAGUA').type_rna() == 'clover leaf loop tRNA'
     assert RNA('UCAUCAAGUGC').type_rna() == 'microRNA'
     assert RNA('AUCAUCAUCAUCGAGAGUAUCAUCAAGUGC').type_rna() == 'clover leaf loop tRNA'
+
+def test_get_aa_sequence():
+    assert RNA('UUUUUCUUAU').get_aa_sequence() == 'Phe-Phe-Leu'
