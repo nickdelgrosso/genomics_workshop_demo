@@ -49,6 +49,7 @@ class RNA:
         return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 
 
+
     @property
     def _check_if_mutated(self):
         """
