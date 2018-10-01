@@ -23,3 +23,8 @@ class RNA:
     def complimentary_sequence(self):
         return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 
+    def _rna_start_codon(self):
+        if any(('AUG' in self.sequence) for AUG in self.sequence):
+            print('coding RNA')
+        else:
+            print('non coding RNA')
