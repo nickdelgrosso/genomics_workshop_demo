@@ -9,5 +9,6 @@ def test_complimentary_sequence_works():
     assert RNA('GUC').complimentary_sequence == RNA('CAG')
     assert RNA('AUC').complimentary_sequence == RNA('UAG')
 
-def rna_start_codon():
-    assert RNA('AUG').rna_start_codon
+def test_rna_start_codon():
+    assert RNA('AUG').rna_start_codon == RNA('AUG')
+
