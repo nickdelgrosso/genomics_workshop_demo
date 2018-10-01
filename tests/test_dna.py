@@ -15,7 +15,7 @@ def test_triplets():
     assert DNA('AAAT').split_DNA_triplets == ['AAA','T']
 
 def test_find_start():
-    assert DNA('ATGGG').find_first_start_site() == 0
-    assert DNA('CCCCATG').find_first_start_site() == 4
+    assert DNA('ATGGG').find_first_start_site == 0
+    assert DNA('CCCCATG').find_first_start_site == 4
     with pytest.raises(TypeError):
-        DNA('GGG').find_first_start_site()
+        DNA('GGG').find_first_start_site

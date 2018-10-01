@@ -27,6 +27,7 @@ class DNA:
     def split_DNA_triplets(self):
         return [self.sequence[i:i + 3] for i in range(0, len(self.sequence), 3)]
 
+    @property
     def find_first_start_site(self):
         for i in range(0,len(self.sequence)):
             if self.sequence[i:i + 3] == 'ATG':
