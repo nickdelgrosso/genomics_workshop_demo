@@ -23,3 +23,13 @@ class DNA:
     def complimentary_sequence(self):
         return DNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 
+    def find_start_codons(self):
+        indices = []
+        index = -1
+
+        while True:
+            index = self.sequence.find('ATG', index + 1)
+            if index == -1:
+                return indices
+            indices.append(index)
+
