@@ -28,5 +28,3 @@ class RNA:
     def reverse_sequence(self):
         return RNA(''.join(reversed(self.sequence)))
 
-
-
