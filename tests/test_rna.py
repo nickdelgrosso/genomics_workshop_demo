@@ -9,6 +9,7 @@ def test_complimentary_sequence_works():
     assert RNA('GUC').complimentary_sequence == RNA('CAG')
     assert RNA('AUC').complimentary_sequence == RNA('UAG')
 
+
 def test_mutated_sequence_works():
     #assert RNA('GGGGGGGGGGUGGGGGGGGG')._check_if_mutated == True
     assert RNA('GGGGGGGGGGUGGGGGGGGG')._check_if_mutated == print('The fish is mutated')
@@ -39,4 +40,10 @@ def test_reverse_sequence_works():
 
 def test_rna_start_codon():
     assert RNA('AUG').rna_start_codon
+
+def test_mutated_sequence_works():
+    #assert RNA('GGGGGGGGGGUGGGGGGGGG')._check_if_mutated == True
+    assert RNA('GGGGGGGGGGUGGGGGGGGG')._check_if_mutated == print('The fish is mutated')
+    assert RNA('GGGGGGGGGGUGGGGUUGGG')._check_if_mutated == print('The fish is not mutated')
+
 
