@@ -23,6 +23,11 @@ class RNA:
         return all(nucleotide in 'GCAU' for nucleotide in self.sequence.upper())
 
     def type_rna(self):
+        """
+        Scans the entire RNA sequence and returns the first motif type
+        found from dictionary type_motifs above;
+        multiple instances or motifs beyond the first match are not reported
+        """
         for index, mo in enumerate(type_motifs):
             if mo in self.sequence.upper():
                 return type_motifs[mo]

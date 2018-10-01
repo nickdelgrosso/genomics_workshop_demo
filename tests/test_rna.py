@@ -13,4 +13,4 @@ def test_motifs_works():
     assert RNA('GAUGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA').type_rna() == 'polyA tail mRNA'
     assert RNA('AUCAUCAUCAUCGAGAGUA').type_rna() == 'clover leaf loop tRNA'
     assert RNA('UCAUCAAGUGC').type_rna() == 'microRNA'
-
+    assert RNA('AUCAUCAUCAUCGAGAGUAUCAUCAAGUGC').type_rna() == 'clover leaf loop tRNA'
