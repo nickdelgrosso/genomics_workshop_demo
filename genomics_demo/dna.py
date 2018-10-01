@@ -58,7 +58,7 @@ class DNA:
             indices.append(index)
 
     def transcribe(self):
-        compliment = self.compliment.sequence
+        compliment = self.sequence
         reverse_compliment = (''.join(compliment[i] for i in range(len(compliment)-1, -1, -1)))
         reverse_compliment_rna = reverse_compliment.replace('T', 'U')
         return reverse_compliment_rna
