@@ -20,7 +20,17 @@ class RNA:
         are_good = (nucleotide.upper() in 'GCAU' for nucleotide in self.sequence)
         return True if all(are_good) else False
 
+
+
     @property
     def complimentary_sequence(self):
         return RNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
+
+
+    @property
+    def _check_if_mutated(self):
+        is_mutated = 'GGGGGGGGGGUGGGGGGGGG' in self.sequence
+        #return True if is_mutated else False
+        print('The fish is mutated') if is_mutated else print('The fish is not mutated')
+
 
