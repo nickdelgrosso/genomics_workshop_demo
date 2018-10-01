@@ -11,4 +11,5 @@ def test_complimentary_sequence_works():
 
 
 def test_check_polyA():
-    assert RNA('A'*50)._check_polyA() == 'Sequence contains a poly A tail of 50 adenines'
+    assert RNA('A' * 50).check_polyA()
+    assert RNA('A' * 49).check_polyA() is False

@@ -19,9 +19,12 @@ class RNA:
     def _check_validity(self):
         return all(nucleotide in 'GCAU' for nucleotide in self.sequence.upper())
 
-    def _check_polyA(self):
-        #return True if self.sequence.endswith('A'*50)
-        return 'Sequence contains a poly A tail of 50 adenines' #if self.sequence.endswith() == RNA('A'*50)
+    def check_polyA(self):
+        """
+        Checks whether the RNA sequence contains a poly A tail of 50 adenines.
+        :return: True if yes, False otherwise
+        """
+        return True if self.sequence.endswith('A'*50) else False
 
     @property
     def complimentary_sequence(self):
