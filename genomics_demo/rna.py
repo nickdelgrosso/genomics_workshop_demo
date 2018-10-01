@@ -40,6 +40,10 @@ class RNA:
         return RNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
 
     def get_aa_sequence(self):
+        """
+        This function provides the potential amino-acid the RNA sequence encodes, even if this is non-coding RNA.
+        :return:
+        """
 
         aa = {
             'UUU' : 'Phe',

@@ -17,3 +17,4 @@ def test_motifs_works():
 
 def test_get_aa_sequence():
     assert RNA('UUUUUCUUAU').get_aa_sequence() == 'Phe-Phe-Leu'
+    assert RNA('GCCACCUAG').get_aa_sequence() == 'Ala-Thr-Stop'
