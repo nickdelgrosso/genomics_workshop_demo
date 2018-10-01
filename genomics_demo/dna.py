@@ -20,6 +20,10 @@ class DNA:
         return all(nucleotide in 'GCAT' for nucleotide in self.sequence.upper())
 
     @property
+    def gc_content(self):
+        return sum(nucleotide in 'GC' for nucleotide in self.sequence.upper())/len(self.sequence)
+
+    @property
     def complimentary_sequence(self):
         return DNA(''.join(complimentary_nucleotides[nt.upper()] for nt in self.sequence))
 

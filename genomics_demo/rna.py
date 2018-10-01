@@ -35,6 +35,8 @@ class RNA:
                 pass
                 # return print('not this type')
 
+
+
     @property
     def complimentary_sequence(self):
         return RNA(''.join(complimentary_nucleotides[nt] for nt in self.sequence.upper()))
@@ -85,4 +87,17 @@ class RNA:
         aa_sequence = [aa[trunc_sequence[i:i+3:1]] for i in range(0, len(trunc_sequence), 3)]
 
         return '-'.join(aa_sequence)
+
+
+    @property
+    def _check_if_mutated(self):
+        """
+        This function checks whether the particular sequence inserted corresponds to GGGGGGGGGGUGGGGGGGGG,
+        otherwise it means the sequence is mutated and the function reports this.
+        :return:
+        """
+        is_mutated = 'GGGGGGGGGGUGGGGGGGGG' in self.sequence
+        #return True if is_mutated else False
+        print('The fish is mutated') if is_mutated else print('The fish is not mutated')
+
 
